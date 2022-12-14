@@ -16,6 +16,7 @@ class TabbedList extends StatefulWidget {
   final SliverTabBar sliverTabBar;
   // final TabBar tabBar;
   final List<TabListBuilder> tabLists;
+  final TabController controller;
   final ScrollPhysics tabPhysics;
 
   @override
@@ -39,6 +40,7 @@ class _TabbedListState extends State<TabbedList> {
               ];
             },
             body: TabBarView(
+              controller: widget.controller,
               children: widget.tabLists,
             )));
   }
