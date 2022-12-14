@@ -7,6 +7,7 @@ class TabListBuilder extends StatelessWidget {
       this.tabListDecoration = const BoxDecoration(),
       this.physics = const ScrollPhysics(),
       required this.uniquePageKey,
+      required this.scrollController,
       required this.length,
       required this.builder,
       this.widgetBelowListView = const SizedBox()})
@@ -15,6 +16,7 @@ class TabListBuilder extends StatelessWidget {
   final Decoration tabListDecoration;
   final ScrollPhysics physics;
   final String uniquePageKey;
+  final ScrollController scrollController;
   final int length;
   final Widget Function(BuildContext context, int index) builder;
   final Widget widgetBelowListView;
@@ -26,6 +28,7 @@ class TabListBuilder extends StatelessWidget {
       child: CustomScrollView(
         physics: physics,
         key: PageStorageKey<String>(uniquePageKey),
+        controller: scrollController,
         slivers: [
           SliverOverlapInjector(
             // This is the flip side of the SliverOverlapAbsorber above.
