@@ -7,6 +7,7 @@ class TabbedList extends StatefulWidget {
     Key? key,
     required this.tabLength,
     required this.sliverTabBar,
+    required this.controller,
     // required this.tabBar,
     required this.tabLists,
     this.tabPhysics = const ScrollPhysics(),
